@@ -1,6 +1,7 @@
 package src.cinemax.model;
 import java.time.LocalDateTime;
 
+
 public class Proiezione {
     private Film film;
     private LocalDateTime dataOra;
@@ -29,7 +30,7 @@ public class Proiezione {
     }
 
     public void setPrezzoBiglietto(double prezzoBiglietto){
-        this.prezzoBiglietto;
+        this.prezzoBiglietto = prezzoBiglietto;
     }
 
     @Override
