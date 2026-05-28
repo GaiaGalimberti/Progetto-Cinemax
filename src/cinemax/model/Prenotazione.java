@@ -10,7 +10,7 @@ public class Prenotazione {
     private Proiezione proiezione;
     private int numeroBiglietto;
     
-    public Prenotazione(Utente utente , Proiezione proiezione , int numeroBiglietto numeroBiglietto){
+    public Prenotazione(Utente utente , Proiezione proiezione , int numeroBiglietto){
         this.codice = UUID.random().toString().substring(0,8).toUpperCase();
         this.utente = utente;
         this.proiezione=proiezione;
@@ -65,7 +65,7 @@ public class Prenotazione {
     @Override
     public String toString() {
         return "Codice : "+codice+"\n Cliente : "+utente.getNome()  +" " + utente.get.cognome() + "\n Film : "+proiezione.getFilm().getTitolo()+"\n Data : "+proiezione.getDataOra().toLocalDate()+"\n biglietti : "+numeroBiglietto+"\n totale : "+getCostoTotale()+"€";
-   
+    }
 
 
 
