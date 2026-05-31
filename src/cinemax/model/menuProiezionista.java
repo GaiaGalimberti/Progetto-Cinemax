@@ -8,14 +8,14 @@ import src.cinemax.model.Proiezione;
   //CAMPI
  
  private Proiezione[] = proiezioni;
-  private int numeroProiezioni;
+ private int numeroProiezioni;
   
   
   //COSTRUTTORE
   
   public menuProiezionista() {
-   proiezioni = new Proiezione[10]; //l'array memorizza al massimo 10 proiezioni
-   numeroProiezioni = 0;
+   this.proiezioni = new Proiezione[10]; //l'array memorizza al massimo 10 proiezioni
+   this.numeroProiezioni = 0;
    }
    
    

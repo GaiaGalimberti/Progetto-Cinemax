@@ -21,15 +21,23 @@ public class csvReader{
 	}
 	
 	//metodi
-	public Proiezione getProiezione(Film film){					//metodo da rivedere
+	public void cercaProiezione(Proiezione proiezione){					//metodo da rivedere
 		FileReader frd = new FileReader("proiezioni.csv");
 		BufferedReader brd = new BufferedReader(frd);
-		return brd.readLine();
+		while(brd.readLine() != proiezione.toString()){
+			brd.newLine();
+		}
+		this.proiezione = proiezione;
 		brd.close();
 		frd.close();
 	}
 	
-	public void registraUtente(Utente utente){
+	public Proiezione visualizzaProiezione(){
+		return cercaProiezione().toString();
+	}
+	
+	
+	public void registraCliente(Utente utente){
 		FileWriter fwt = new FileWriter("utenti.csv");
 		BufferedWriter bwt = new BufferedWriter(fwt);
 		bwt.write(utente);
