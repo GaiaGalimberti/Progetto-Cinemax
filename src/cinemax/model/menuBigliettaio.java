@@ -40,4 +40,14 @@ import src.cinemax.model.Prenotazione;
    public void modificaNumeroBiglietti(int i, int nuovoNumero) {
     prenotazioni[i].setNumeroBiglietto(nuovoNumero);
 	}
+
+	//cerca prenotazione
+	public Prenotazione cercaPrenotazione(String codice) {
+		for(int i=0; i<numeroPrenotazioni; i++) {
+			if(prenotazioni[i].getCodice().equals(codice)) {
+				return prenotazioni[i];
+			}
+		}
+		return null;
+	}
 }
