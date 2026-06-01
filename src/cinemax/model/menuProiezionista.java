@@ -39,5 +39,19 @@ import src.cinemax.model.Proiezione;
    public void modificaPrezzo(int i, double nuovoPrezzo) {
     proiezioni[i].setPrezzoBiglietto(nuovoPrezzo);
 	}
+
+   //modifica una proiezione
+   public void modificaProiezione(int i, Proiezione nuovaProiezione) {
+	   proiezioni[i] = nuovaProiezione;
+   }
+
+	//elimina una proiezione
+	 public void eliminaProiezione(int i) {
+		 for(int j = i; j<numeroProiezioni-1; j++) {
+			 proiezioni[j] = proiezioni[j+1];
+		 }
+		 proiezioni[numeroProiezioni-1] = null;
+		 numeroProiezioni--;
+	 }
   }
    
