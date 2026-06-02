@@ -1,4 +1,4 @@
-package src.cinemax.model;
+package bin;
 
 public class Film {
     private String titolo ;

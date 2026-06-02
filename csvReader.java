@@ -1,4 +1,4 @@
-package src.cinemax.model;
+package bin;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -40,7 +40,7 @@ public class csvReader{
 	public void registraCliente(Utente utente){
 		FileWriter fwt = new FileWriter("utenti.csv");
 		BufferedWriter bwt = new BufferedWriter(fwt);
-		bwt.write(utente);
+		bwt.write(utente.toString());
 		bwt.newLine();
 		bwt.close();
 		fwt.close();

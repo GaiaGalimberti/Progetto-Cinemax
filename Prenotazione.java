@@ -1,4 +1,4 @@
-package src.cinemax.model;
+package bin;
 import java.util.UUID;
 
 import src.cinemax.model.Utente;
@@ -64,7 +64,7 @@ public class Prenotazione {
 
     @Override
     public String toString() {
-        return "Codice : "+codice+"\n Cliente : "+utente.getNome()  +" " + utente.get.cognome() + "\n Film : "+proiezione.getFilm().getTitolo()+"\n Data : "+proiezione.getDataOra().toLocalDate()+"\n biglietti : "+numeroBiglietto+"\n totale : "+getCostoTotale()+"€";
+        return "Codice : "+codice+"\n Cliente : "+utente.getNome()  +" " + utente.getCognome() + "\n Film : "+proiezione.getFilm().getTitolo()+"\n Data : "+proiezione.getDataOra().toLocalDate()+"\n biglietti : "+numeroBiglietto+"\n totale : "+getCostoTotale()+"€";
     }
 
 

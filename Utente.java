@@ -1,4 +1,4 @@
-package src.cinemax.model;
+package bin;
 import java.time.LocalDate;
 
 public class Utente {
