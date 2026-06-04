@@ -1,8 +1,6 @@
 package bin;
 import java.util.UUID;
 
-import src.cinemax.model.Utente;
-
 public class Prenotazione {
 
     private String codice;
