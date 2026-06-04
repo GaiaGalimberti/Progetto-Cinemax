@@ -21,11 +21,13 @@ public class csvReader{
 	}
 	
 	//metodi
-	public void cercaProiezione(Proiezione proiezione){					//metodo da rivedere
+	public void cercaProiezione(Proiezione proiezione){
 		FileReader frd = new FileReader("proiezioni.csv");
 		BufferedReader brd = new BufferedReader(frd);
+		FileWriter fwt = new FileWriter("proiezioni.csv");
+		BufferedWriter bwt = new BufferedWriter(fwt);
 		while(brd.readLine() != proiezione.toString()){
-			brd.newLine();
+			bwt.newLine();
 		}
 		this.proiezione = proiezione;
 		brd.close();
@@ -40,6 +42,11 @@ public class csvReader{
 	public void registraCliente(Utente utente){
 		FileWriter fwt = new FileWriter("utenti.csv");
 		BufferedWriter bwt = new BufferedWriter(fwt);
+		FileReader frd = new FileReader("utenti.csv");
+		BufferedReader brd = new BufferedReader(frd);
+		while(brd.readLine() != null){
+			bwt.newLine();
+		}
 		bwt.write(utente.toString());
 		bwt.newLine();
 		bwt.close();
