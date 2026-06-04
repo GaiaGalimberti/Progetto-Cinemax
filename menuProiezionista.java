@@ -1,7 +1,5 @@
 package bin;
 
-import src.cinemax.model.Proiezione;
-
  public class menuProiezionista {
   
   
@@ -28,7 +26,7 @@ import src.cinemax.model.Proiezione;
 	}
 	
    //visualizza tutte le proiezioni
-   public String visualizzaProiezioni() {
+   public void visualizzaProiezioni() {
     for(int i=0; i<numeroProiezioni; i++) {
 	 System.out.println("ecco l'elenco delle proiezioni: ");
 	 System.out.println(proiezioni[i]);

@@ -1,6 +1,5 @@
 package bin;
 
-import src.cinemax.model.Prenotazione;
 
  public class menuBigliettaio {
   

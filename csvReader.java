@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-
+import java.io.IOException;
 
 public class csvReader{
 	//campi
@@ -21,25 +21,25 @@ public class csvReader{
 	}
 	
 	//metodi
-	public void cercaProiezione(Proiezione proiezione){
+	public String cercaProiezione(Object... args) throws IOException{
 		FileReader frd = new FileReader("proiezioni.csv");
 		BufferedReader brd = new BufferedReader(frd);
-		FileWriter fwt = new FileWriter("proiezioni.csv");
-		BufferedWriter bwt = new BufferedWriter(fwt);
-		while(brd.readLine() != proiezione.toString()){
-			bwt.newLine();
+		
+		while(brd.readLine() != args.toString()){
+			brd.readLine();
 		}
-		this.proiezione = proiezione;
+		String proiezione = brd.readLine();
 		brd.close();
 		frd.close();
+		return proiezione;
 	}
 	
-	public Proiezione visualizzaProiezione(){
-		return cercaProiezione().toString();
+	public String visualizzaProiezione() throws IOException{
+		return cercaProiezione(proiezione).toString();
 	}
 	
 	
-	public void registraCliente(Utente utente){
+	public void registraCliente(Utente utente) throws IOException{
 		FileWriter fwt = new FileWriter("utenti.csv");
 		BufferedWriter bwt = new BufferedWriter(fwt);
 		FileReader frd = new FileReader("utenti.csv");

@@ -1,4 +1,5 @@
 package bin;
+
 import java.time.LocalDateTime;
 
 
@@ -32,14 +33,15 @@ public class menuCliente{
 		return LocalDateTime.now();
 	}
 	
-	public Prenotazione modificaPrenotazione(Proiezione proiezione){
-		if(proiezione.getDataOra() && proiezione.setDataOra().compareTo(dataOdierna())>0){
+	public Prenotazione modificaPrenotazione(Proiezione proiezione, LocalDateTime data){
+		if((proiezione.getDataOra().isAfter(dataOdierna())) &&  (data.isAfter(dataOdierna()))){
 			this.prenotazione = prenotazione;
 		}
+		return prenotazione;
 	}
 	
 	public void eliminaPrenotazione(Prenotazione prenotazione){
-		if(proiezione.getDataOra() > dataOdierna())
+		if(prenotazione.getProiezione().getDataOra().compareTo(dataOdierna())>0)
 			this.prenotazione = null;
 	}
 }
