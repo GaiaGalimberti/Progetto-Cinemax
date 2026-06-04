@@ -25,7 +25,7 @@ public class Film {
         return genere;
     }
 
-    public String getRegistra(){
+    public String getRegista(){
         return registra;
     }
 
@@ -37,7 +37,7 @@ public class Film {
         return durataMinuti;
     }
 
-    public int etaMinima(){
+    public int getEtaMinima(){
         return etaMinima;
     }
 

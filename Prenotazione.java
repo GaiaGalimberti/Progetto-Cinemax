@@ -11,7 +11,7 @@ public class Prenotazione {
     private int numeroBiglietto;
     
     public Prenotazione(Utente utente , Proiezione proiezione , int numeroBiglietto){
-        this.codice = UUID.random().toString().substring(0,8).toUpperCase();
+        this.codice = UUID.randomUUID().toString().substring(0,8).toUpperCase();
         this.utente = utente;
         this.proiezione=proiezione;
         this.numeroBiglietto=numeroBiglietto;
