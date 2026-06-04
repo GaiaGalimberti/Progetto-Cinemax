@@ -37,7 +37,7 @@ public class Film {
         return durataMinuti;
     }
 
-    public int getEtaMinima(){g
+    public int getEtaMinima(){
         return etaMinima;
     }
 
