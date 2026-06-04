@@ -7,7 +7,7 @@ import src.cinemax.model.Proiezione;
   
   //CAMPI
  
- private Proiezione[] = proiezioni;
+ private Proiezione[] proiezioni;
  private int numeroProiezioni;
   
   
