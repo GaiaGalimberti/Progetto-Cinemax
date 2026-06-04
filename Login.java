@@ -12,10 +12,11 @@ public class Login{
 	}
 
 	//metodi
-	public boolean login(String username, String password){
-		if(Utente.getUsername() == username && Utente.getPassword() == password)
+	public boolean login(Utente utente){
+		if(utente.getUsername() == username && utente.getPassword() == password)
 			return true;
 		else
-			system.out.println("username o password non corretti");
+			System.out.println("username o password non corretti");
 			return false;
 	}
+}
