@@ -1,5 +1,11 @@
 package bin;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 public class Login{
 	//campi
 	String username;
@@ -12,11 +18,23 @@ public class Login{
 	}
 
 	//metodi
-	public boolean login(Utente utente){
-		if(utente.getUsername() == username && utente.getPassword() == password)
-			return true;
-		else
-			System.out.println("username o password non corretti");
-			return false;
+	public String toString(){
+		return "username: " + username + " password: " + password;
+	}
+	
+	public boolean login(Login login) throws IOException{
+		FileReader frd = new FileReader("utenti.csv");
+		BufferedReader brd = new BufferedReader(frd);
+		
+		while(brd.readLine() != null){
+			if(brd.readLine().contains(login.toString()))
+				brd.close();
+				frd.close();
+				return true;	
+		}
+		System.out.println("username o password non corretti");
+		brd.close();
+		frd.close();
+		return false;
 	}
 }
