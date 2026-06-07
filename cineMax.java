@@ -21,10 +21,28 @@ public class CineMax {
 		scanner.nextLine();
 
 		if(scelta == 1){
-			System.out.println("login da implementare");
+			String username = System.in("inserire il proprio nome utente: ");
+			String password = System.in("inserire la password: ");
+			Login login = new Login(username, password);
+			boolean accesso;
+			accesso.login(login);
+			if(accesso == true)
+				System.out.print("Accesso consentito!");
+			else
+				break;
 		}
 		else if(scelta == 2){
-				System.out.println("registrazione da implementare");
+			System.out.println("Procedura di registrazione: inserire i dati richiesti");
+			String nome = System.in("nome? ");
+			String cognome = System.in("cognome? ");
+			String username = System.in("username? ");
+			String password = System.in("password? ");
+			LocalDate dataNascita = System.in("data di nascita? Richiesta nel formato aaaa-mm-gg");
+			String domicilio = System.in("domicilio? ");
+			String ruolo = System.in("ruolo? scrivere Cliente, Bigliettaio o Proiezionista");
+			Utente nuovoUtente = new Utente(nome, cognome, username, password, dataNascita, domicilio, ruolo);
+			registraCliente(nuovoUtente);
+			break;
 		}
 		else if(scelta == 3){
 			menuGuest(scanner);
@@ -50,7 +68,13 @@ public class CineMax {
 		scelta = scanner.nextInt();
 		scanner.nextLine();
 
-		if(scelta == 1){
+		if(scelta == 1){		//non conveniva utilizzare il metodo cercaProiezione e visualizzaProiezione della classe csvReader? sono da usare quando il login non è necessario
+			/*
+			Object argomenti = System.in("inserire titolo del film, genere, intervallo di date, costo bilgietto o combianzione dei criteri di ricerca");
+			String proiezione = cercaProiezione(argomenti).visualizzaProiezione();
+			System.out.println("ecco la proiezione trovata: ");
+			System.out.println(proiezione);
+			*/
 			cercaFilm(scanner);
 		} else if(scelta == 0){
 			System.out.println("torno al menu principale");
@@ -59,8 +83,8 @@ public class CineMax {
 		}
 		} while(scelta != 0);
 	}
-
-	private static void cercaFilm(Scanner scanner){
+	/*
+	private static void cercaFilm(Scanner scanner){		
 		System.out.print("Inserisci titolo film: ");
 		String titolo = scanner.nextLine().toLowerCase();
 
@@ -83,5 +107,6 @@ public class CineMax {
 		if(sel > 0 && sel <= risultati.size()){
 			System.out.println(risultati.get(sel-1).toString());
 		}
+	*/
 	}
 }
