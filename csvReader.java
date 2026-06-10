@@ -45,7 +45,7 @@ public class csvReader{
 		FileReader frd = new FileReader("utenti.csv");
 		BufferedReader brd = new BufferedReader(frd);
 		while(brd.readLine() != null){
-			bwt.newLine();
+			brd.readLine();
 		}
 		bwt.write(utente.toString());
 		bwt.newLine();
